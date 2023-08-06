@@ -1,21 +1,14 @@
 
 'use client'
-import { Metadata } from "next/types";
-import { ThemeProvider, createTheme } from '@mui/material'
-import SendMessageBox from "./send-message-box";
 import useContactList from "@/hooks/useContactList";
-import ContactList from "./contactList";
-import { useState, useEffect, useMemo, useCallback } from "react";
-import io from 'socket.io-client'
-import request from "@/lib/request";
 import { Message } from "@/types/types";
+import { ThemeProvider, createTheme } from '@mui/material';
+import { useCallback, useEffect, useMemo, useState } from "react";
+import io from 'socket.io-client';
 import ChatList from "./chat-list";
+import ContactList from "./contactList";
+import SendMessageBox from "./send-message-box";
 
-
-export const metadata: Metadata = {
-    title: 'chat app',
-    description: 'start chatting',
-}
 
 const darkTheme = createTheme({
     palette: {
