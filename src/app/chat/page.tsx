@@ -36,7 +36,8 @@ export default function ChatLayout() {
     useEffect(() => {
         fetch('/api/socket').then(() => {
             socket = io({
-                path: '/api/socket_io'
+                path: '/api/socket_io',
+                rejectUnauthorized: false
             });
             socket.on('message', (message) => {
                 const { sender } = message;
