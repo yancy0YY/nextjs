@@ -37,7 +37,8 @@ export default function ChatLayout() {
         fetch('/api/socket').then(() => {
             socket = io({
                 path: '/api/socket_io',
-                rejectUnauthorized: false
+                rejectUnauthorized: false,
+                addTrailingSlash: false
             });
             socket.on('message', (message) => {
                 const { sender } = message;

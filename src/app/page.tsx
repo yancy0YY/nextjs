@@ -7,9 +7,9 @@ export default function Home() {
   const [userName, setUserName] = useState('')
   const router = useRouter()
   const gotoChatPage = useCallback(() => {
-    //document.cookie = ''
+    document.cookie = `user-name=${userName}`
     router.push('/chat')
-  },[])
+  },[userName])
   return (
     <main className="flex min-h-screen p-24">
       <div className='m-auto space-x-2'>
